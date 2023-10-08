@@ -1,0 +1,3 @@
+[submodule "Batumo/vendor/spdlog"]
+	path = Batumo/vendor/spdlog
+	url = https://github.com/gabime/spdlog.git
