@@ -4,6 +4,7 @@
 
 #include "Core.h"
 #include "spdlog/spdlog.h"
+#include "spdlog/fmt/ostr.h"
 
 namespace Batumo {
 	class BATUMO_API Log
@@ -26,6 +27,7 @@ namespace Batumo {
 #define BT_CORE_FATAL(...)	::Batumo::Log::GetCoreLogger()->critical(__VA_ARGS__)
 
 
+#define BT_TRACE(...)		::Batumo::Log::GetClientLogger()->trace(__VA_ARGS__)
 #define BT_INFO(...)		::Batumo::Log::GetClientLogger()->info(__VA_ARGS__)
 #define BT_WARN(...)		::Batumo::Log::GetClientLogger()->warn(__VA_ARGS__)
 #define BT_ERROR(...)		::Batumo::Log::GetClientLogger()->error(__VA_ARGS__)

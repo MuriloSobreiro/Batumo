@@ -8,5 +8,6 @@
 	#endif
 #else
 	#error Batumo only support windows
-
 #endif
+
+#define BIT(x) (1 << x)

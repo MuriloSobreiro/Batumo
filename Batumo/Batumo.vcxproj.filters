@@ -4,6 +4,9 @@
     <Filter Include="Batumo">
       <UniqueIdentifier>{4D63F0A8-3905-1B7F-22C0-2ED30E01A2CF}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Batumo\Events">
+      <UniqueIdentifier>{91B6858B-FD76-01C2-C6B1-4A3F3231469E}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Batumo.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\Batumo\EntryPoint.h">
       <Filter>Batumo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Batumo\Events\ApplicationEvent.h">
+      <Filter>Batumo\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Batumo\Events\Event.h">
+      <Filter>Batumo\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Batumo\Events\KeyEvent.h">
+      <Filter>Batumo\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Batumo\Events\MouseEvent.h">
+      <Filter>Batumo\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Batumo\Log.h">
       <Filter>Batumo</Filter>
