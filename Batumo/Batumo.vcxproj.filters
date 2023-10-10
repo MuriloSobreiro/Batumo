@@ -34,6 +34,7 @@
     <ClInclude Include="src\Batumo\Log.h">
       <Filter>Batumo</Filter>
     </ClInclude>
+    <ClInclude Include="src\btpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Batumo\Application.cpp">
@@ -42,5 +43,6 @@
     <ClCompile Include="src\Batumo\Log.cpp">
       <Filter>Batumo</Filter>
     </ClCompile>
+    <ClCompile Include="src\btpch.cpp" />
   </ItemGroup>
 </Project>

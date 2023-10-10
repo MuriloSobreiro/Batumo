@@ -1,3 +1,4 @@
+#include "btpch.h"
 #include "Application.h"
 
 namespace Batumo {

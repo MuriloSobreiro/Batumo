@@ -2,8 +2,6 @@
 
 #include "Batumo/Core.h"
 
-#include <string>
-#include <functional>
 
 namespace Batumo {
 
