@@ -9,6 +9,11 @@ workspace "Batumo"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "Batumo/vendor/GLFW/include"
+
+include "Batumo/vendor/GLFW"
+
 project "Batumo"
 	location "Batumo"
 	kind "SharedLib"
@@ -27,7 +32,13 @@ project "Batumo"
 
 	includedirs{
 		"%{prj.name}/vendor/spdlog/include",
-		"%{prj.name}/src"
+		"%{prj.name}/src",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Batumo/Core.h"
-
+#include "btpch.h"
 
 namespace Batumo {
 

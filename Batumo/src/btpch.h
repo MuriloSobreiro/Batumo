@@ -12,6 +12,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "Batumo/Log.h"
+
 #ifdef BT_PLATAFORM_WINDOWS
 	#include <Windows.h>
 #endif // BT_PLATAFORM_WINDOWS
