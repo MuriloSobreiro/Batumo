@@ -37,6 +37,12 @@
     <ClInclude Include="src\Batumo\Events\MouseEvent.h">
       <Filter>Batumo\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Batumo\Layer.h">
+      <Filter>Batumo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Batumo\LayerStack.h">
+      <Filter>Batumo</Filter>
+    </ClInclude>
     <ClInclude Include="src\Batumo\Log.h">
       <Filter>Batumo</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Batumo\Application.cpp">
+      <Filter>Batumo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Batumo\Layer.cpp">
+      <Filter>Batumo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Batumo\LayerStack.cpp">
       <Filter>Batumo</Filter>
     </ClCompile>
     <ClCompile Include="src\Batumo\Log.cpp">

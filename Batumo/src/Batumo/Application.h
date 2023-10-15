@@ -5,6 +5,7 @@
 #include "Batumo/Events/ApplicationEvent.h"
 
 #include "Window.h"
+#include "Batumo/LayerStack.h"
 
 namespace Batumo {
 
@@ -16,11 +17,15 @@ namespace Batumo {
 
 		void Run();
 
+		void PushLayer(Layer* layer);
+		void PushOverlay(Layer* layer);
+
 		void OnEvent(Event& e);
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 		std::unique_ptr<Window> m_Window;
 		bool m_Runnig = true;
+		LayerStack m_LayerStack;
 	};
 
 	Application* CreateApplication();
