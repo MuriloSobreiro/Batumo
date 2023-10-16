@@ -11,8 +11,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Batumo/vendor/GLFW/include"
+IncludeDir["Glad"] = "Batumo/vendor/Glad/include"
+IncludeDir["ImGui"] = "Batumo/vendor/ImGui"
 
 include "Batumo/vendor/GLFW"
+include "Batumo/vendor/Glad"
+include "Batumo/vendor/ImGui"
 
 project "Batumo"
 	location "Batumo"
@@ -33,11 +37,15 @@ project "Batumo"
 	includedirs{
 		"%{prj.name}/vendor/spdlog/include",
 		"%{prj.name}/src",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links{
 		"GLFW",
+		"Glad",
+		"ImGui",
 		"opengl32.lib"
 	}
 
@@ -48,7 +56,8 @@ project "Batumo"
 
 		defines{
 			"BT_PLATAFORM_WINDOWS",
-			"BT_BUILD_DLL"
+			"BT_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands{
