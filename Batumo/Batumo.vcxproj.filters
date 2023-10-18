@@ -65,6 +65,8 @@
       <Filter>Plataform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\btpch.h" />
+    <ClInclude Include="src\Batumo\Input.h" />
+    <ClInclude Include="src\Plataform\Windows\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Batumo\Application.cpp">
@@ -89,5 +91,6 @@
       <Filter>Plataform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\btpch.cpp" />
+    <ClCompile Include="src\Plataform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>
