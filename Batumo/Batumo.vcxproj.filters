@@ -37,7 +37,13 @@
     <ClInclude Include="src\Batumo\Events\Event.h">
       <Filter>Batumo\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Batumo\Events\KeyCodes.h">
+      <Filter>Batumo\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Batumo\Events\KeyEvent.h">
+      <Filter>Batumo\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Batumo\Events\MouseButtonCodes.h">
       <Filter>Batumo\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Batumo\Events\MouseEvent.h">
@@ -45,6 +51,9 @@
     </ClInclude>
     <ClInclude Include="src\Batumo\ImGui\ImGuiLayer.h">
       <Filter>Batumo\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Batumo\Input.h">
+      <Filter>Batumo</Filter>
     </ClInclude>
     <ClInclude Include="src\Batumo\Layer.h">
       <Filter>Batumo</Filter>
@@ -61,14 +70,13 @@
     <ClInclude Include="src\Plataform\OpenGL\imgui_impl_opengl3.h">
       <Filter>Plataform\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="src\Plataform\Windows\WindowsInput.h">
+      <Filter>Plataform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\Plataform\Windows\WindowsWindow.h">
       <Filter>Plataform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\btpch.h" />
-    <ClInclude Include="src\Batumo\Input.h" />
-    <ClInclude Include="src\Plataform\Windows\WindowsInput.h" />
-    <ClInclude Include="src\Batumo\Events\KeyCodes.h" />
-    <ClInclude Include="src\Batumo\Events\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Batumo\Application.cpp">
@@ -89,10 +97,12 @@
     <ClCompile Include="src\Plataform\OpenGL\imgui_impl_opengl3.cpp">
       <Filter>Plataform\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="src\Plataform\Windows\WindowsInput.cpp">
+      <Filter>Plataform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\Plataform\Windows\WindowsWindow.cpp">
       <Filter>Plataform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\btpch.cpp" />
-    <ClCompile Include="src\Plataform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>

@@ -14,6 +14,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Batumo/vendor/GLFW/include"
 IncludeDir["Glad"] = "Batumo/vendor/Glad/include"
 IncludeDir["ImGui"] = "Batumo/vendor/ImGui"
+IncludeDir["glm"] = "Batumo/vendor/glm"
 
 group "Dependencies"
 	include "Batumo/vendor/GLFW"
@@ -44,7 +45,8 @@ project "Batumo"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.ImGui}/backends"
+		"%{IncludeDir.ImGui}/backends",
+		"%{IncludeDir.glm}"
 	}
 
 	links{
@@ -99,7 +101,8 @@ project "Sandbox"
 
 	includedirs{
 		"Batumo/vendor/spdlog/include",
-		"Batumo/src"
+		"Batumo/src",
+		"%{IncludeDir.glm}"
 	}
 
 	links{

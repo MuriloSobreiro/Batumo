@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>btpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>BT_PLATAFORM_WINDOWS;BT_BUILD_DLL;GLFW_INCLUDE_NONE;BT_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui;vendor\ImGui\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui;vendor\ImGui\backends;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -102,7 +102,7 @@
       <PrecompiledHeaderFile>btpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>BT_PLATAFORM_WINDOWS;BT_BUILD_DLL;GLFW_INCLUDE_NONE;BT_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui;vendor\ImGui\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui;vendor\ImGui\backends;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -128,7 +128,7 @@
       <PrecompiledHeaderFile>btpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>BT_PLATAFORM_WINDOWS;BT_BUILD_DLL;GLFW_INCLUDE_NONE;BT_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui;vendor\ImGui\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui;vendor\ImGui\backends;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -166,9 +166,9 @@
     <ClInclude Include="src\Batumo\Log.h" />
     <ClInclude Include="src\Batumo\Window.h" />
     <ClInclude Include="src\Plataform\OpenGL\imgui_impl_opengl3.h" />
+    <ClInclude Include="src\Plataform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Plataform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\btpch.h" />
-    <ClInclude Include="src\Plataform\Windows\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Batumo\Application.cpp" />
@@ -177,11 +177,11 @@
     <ClCompile Include="src\Batumo\LayerStack.cpp" />
     <ClCompile Include="src\Batumo\Log.cpp" />
     <ClCompile Include="src\Plataform\OpenGL\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="src\Plataform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Plataform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\btpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\Plataform\Windows\WindowsInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">

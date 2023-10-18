@@ -7,3 +7,6 @@
 [submodule "Batumo/vendor/ImGui"]
 	path = Batumo/vendor/ImGui
 	url = https://github.com/TheCherno/imgui.git
+[submodule "Batumo/vendor/glm"]
+	path = Batumo/vendor/glm
+	url = https://github.com/g-truc/glm.git
