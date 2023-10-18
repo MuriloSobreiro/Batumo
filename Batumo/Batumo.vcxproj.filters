@@ -67,6 +67,8 @@
     <ClInclude Include="src\btpch.h" />
     <ClInclude Include="src\Batumo\Input.h" />
     <ClInclude Include="src\Plataform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\Batumo\Events\KeyCodes.h" />
+    <ClInclude Include="src\Batumo\Events\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Batumo\Application.cpp">

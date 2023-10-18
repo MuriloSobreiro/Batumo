@@ -155,7 +155,9 @@
     <ClInclude Include="src\Batumo\EntryPoint.h" />
     <ClInclude Include="src\Batumo\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Batumo\Events\Event.h" />
+    <ClInclude Include="src\Batumo\Events\KeyCodes.h" />
     <ClInclude Include="src\Batumo\Events\KeyEvent.h" />
+    <ClInclude Include="src\Batumo\Events\MouseButtonCodes.h" />
     <ClInclude Include="src\Batumo\Events\MouseEvent.h" />
     <ClInclude Include="src\Batumo\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Batumo\Input.h" />
