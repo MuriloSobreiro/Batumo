@@ -6,7 +6,7 @@ public:
 		: Layer("Example"){}
 
 	void OnUpdate() override {
-		BT_INFO("ExampleLayer::Update");
+		//BT_INFO("ExampleLayer::Update");
 	}
 
 	void OnEvent(Batumo::Event& event) override {
@@ -18,6 +18,7 @@ class SandBox : public Batumo::Application {
 public:
 	SandBox() {
 		PushLayer(new ExampleLayer());
+		PushOverlay(new Batumo::ImGuiLayer());
 	}
 	~SandBox() {
 

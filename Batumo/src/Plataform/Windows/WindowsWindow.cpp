@@ -11,7 +11,7 @@ namespace Batumo {
 	static bool s_GLFWInitialized = false;
 
 	static void GLFWErrorCallback(int error, const char* description) {
-
+		BT_CORE_ERROR("GLFW Error ({0}): {1}", error, description);
 	}
 
 	Window* Window::Create(const WindowProps& props) {
@@ -36,13 +36,11 @@ namespace Batumo {
 		if (!s_GLFWInitialized) {
 			int success = glfwInit();
 			BT_CORE_ASSERT(success, "Could not initialize GLFW!");
-
+			glfwSetErrorCallback(GLFWErrorCallback);
 			s_GLFWInitialized = true;
 		}
-		glfwSetErrorCallback(GLFWErrorCallback);
 
-		m_Window = glfwCreateWindow((int)props.Width, (int)props
-			.Height, m_Data.Title.c_str(), nullptr, nullptr);
+		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		BT_CORE_ASSERT(status, "Could not initialize Glad!");
@@ -52,7 +50,7 @@ namespace Batumo {
 		// Setar os Callbacks do GLFW
 
 		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height) {
-			WindowData data = *(WindowData*)glfwGetWindowUserPointer(window);
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 			data.Width = width;
 			data.Height = height;
 
@@ -61,14 +59,14 @@ namespace Batumo {
 			});
 
 		glfwSetWindowCloseCallback(m_Window, [](GLFWwindow* window) {
-			WindowData data = *(WindowData*)glfwGetWindowUserPointer(window);
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 
 			WindowCloseEvent event;
 			data.EventCallback(event);
 			});
 
 		glfwSetKeyCallback(m_Window, [](GLFWwindow* window, int key, int scancode, int action, int mods) {
-			WindowData data = *(WindowData*)glfwGetWindowUserPointer(window);
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 
 			switch (action)
 			{
@@ -92,8 +90,16 @@ namespace Batumo {
 			}
 			}});
 
+		glfwSetCharCallback(m_Window, [](GLFWwindow* window, unsigned int keycode)
+			{
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+			KeyTypedEvent event(keycode);
+			data.EventCallback(event);
+			});
+
 		glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* window, int button, int action, int mods) {
-			WindowData data = *(WindowData*)glfwGetWindowUserPointer(window);
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 
 			switch (action)
 			{
@@ -112,14 +118,14 @@ namespace Batumo {
 			}});
 
 		glfwSetScrollCallback(m_Window, [](GLFWwindow* window, double xoffset, double yoffset){
-			WindowData data = *(WindowData*)glfwGetWindowUserPointer(window);
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 
 			MouseScrolledEvent event((float)xoffset, (float)yoffset);
 			data.EventCallback(event);
 			});
 
 		glfwSetCursorPosCallback(m_Window, [](GLFWwindow* window, double xpos, double ypos) {
-			WindowData data = *(WindowData*)glfwGetWindowUserPointer(window);
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 			
 			MouseMovedEvent event((float)xpos, (float)ypos);
 			data.EventCallback(event);
