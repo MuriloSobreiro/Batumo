@@ -66,7 +66,6 @@ namespace Batumo {
 
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui::NewFrame();
-		BT_CORE_INFO(io.DisplaySize.x);
 		static bool show = true;
 		ImGui::ShowDemoWindow(&show);
 
