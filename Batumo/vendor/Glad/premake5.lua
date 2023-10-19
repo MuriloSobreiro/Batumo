@@ -1,7 +1,7 @@
 project "Glad"
 	kind "StaticLib"
 	language "C"
-	staticruntime "off"
+	staticruntime "on"
 	runtime "Debug"
 	warnings "off"
 
