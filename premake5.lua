@@ -102,6 +102,7 @@ project "Sandbox"
 	includedirs{
 		"Batumo/vendor/spdlog/include",
 		"Batumo/src",
+		"Batumo/vendor",
 		"%{IncludeDir.glm}"
 	}
 

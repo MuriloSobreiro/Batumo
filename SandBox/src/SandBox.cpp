@@ -1,5 +1,6 @@
 #include "Batumo.h"
 
+
 class ExampleLayer : public Batumo::Layer {
 public:
 	ExampleLayer()
@@ -10,7 +11,7 @@ public:
 	}
 
 	void OnEvent(Batumo::Event& event) override {
-		BT_TRACE("{0}", event);
+		//BT_TRACE("{0}", event);
 	}
 };
 
@@ -18,7 +19,6 @@ class SandBox : public Batumo::Application {
 public:
 	SandBox() {
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Batumo::ImGuiLayer());
 	}
 	~SandBox() {
 

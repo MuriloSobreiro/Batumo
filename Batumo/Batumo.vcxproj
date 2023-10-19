@@ -165,18 +165,17 @@
     <ClInclude Include="src\Batumo\LayerStack.h" />
     <ClInclude Include="src\Batumo\Log.h" />
     <ClInclude Include="src\Batumo\Window.h" />
-    <ClInclude Include="src\Plataform\OpenGL\imgui_impl_opengl3.h" />
     <ClInclude Include="src\Plataform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Plataform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\btpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Batumo\Application.cpp" />
+    <ClCompile Include="src\Batumo\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Batumo\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Batumo\Layer.cpp" />
     <ClCompile Include="src\Batumo\LayerStack.cpp" />
     <ClCompile Include="src\Batumo\Log.cpp" />
-    <ClCompile Include="src\Plataform\OpenGL\imgui_impl_opengl3.cpp" />
     <ClCompile Include="src\Plataform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Plataform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\btpch.cpp">

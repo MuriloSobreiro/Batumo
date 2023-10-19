@@ -4,34 +4,34 @@
 
 namespace Batumo {
 	LayerStack::LayerStack() {
-		m_LayerInsert = m_layers.begin();
 	}
 
 	LayerStack::~LayerStack() {
-		for (Layer* layer : m_layers)
+		for (Layer* layer : m_Layers)
 			delete layer;
 	}
 
 	void LayerStack::PushLayer(Layer* layer) {
-		m_layers.emplace(m_LayerInsert,layer);
+		m_Layers.emplace(m_Layers.begin() + m_LayerInsertIndex,layer);
+		m_LayerInsertIndex++;
 	}
 
 	void LayerStack::PushOverlay(Layer* layer) {
-		m_layers.push_back(layer);
+		m_Layers.push_back(layer);
 	}
 
 	void LayerStack::PopLayer(Layer* layer) {
-		auto it = std::find(m_layers.begin(), m_layers.end(), layer);
-		if (it != m_layers.end()) {
-			m_layers.erase(it);
-			m_LayerInsert--;
+		auto it = std::find(m_Layers.begin(), m_Layers.end(), layer);
+		if (it != m_Layers.end()) {
+			m_Layers.erase(it);
+			m_LayerInsertIndex--;
 		}
 	}
 
 	void LayerStack::PopOverlay(Layer* layer) {
-		auto it = std::find(m_layers.begin(), m_layers.end(), layer);
-		if (it != m_layers.end()) {
-			m_layers.erase(it);
+		auto it = std::find(m_Layers.begin(), m_Layers.end(), layer);
+		if (it != m_Layers.end()) {
+			m_Layers.erase(it);
 		}
 	}
 }

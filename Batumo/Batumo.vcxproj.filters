@@ -13,9 +13,6 @@
     <Filter Include="Plataform">
       <UniqueIdentifier>{CB364245-37A1-F6BB-80DF-A761EC88D410}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Plataform\OpenGL">
-      <UniqueIdentifier>{9FED79A4-8BE6-98F6-B418-7E7BA0707802}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Plataform\Windows">
       <UniqueIdentifier>{057CD38B-7192-D121-BA09-5D43265FA2A9}</UniqueIdentifier>
     </Filter>
@@ -67,9 +64,6 @@
     <ClInclude Include="src\Batumo\Window.h">
       <Filter>Batumo</Filter>
     </ClInclude>
-    <ClInclude Include="src\Plataform\OpenGL\imgui_impl_opengl3.h">
-      <Filter>Plataform\OpenGL</Filter>
-    </ClInclude>
     <ClInclude Include="src\Plataform\Windows\WindowsInput.h">
       <Filter>Plataform\Windows</Filter>
     </ClInclude>
@@ -82,6 +76,9 @@
     <ClCompile Include="src\Batumo\Application.cpp">
       <Filter>Batumo</Filter>
     </ClCompile>
+    <ClCompile Include="src\Batumo\ImGui\ImGuiBuild.cpp">
+      <Filter>Batumo\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\Batumo\ImGui\ImGuiLayer.cpp">
       <Filter>Batumo\ImGui</Filter>
     </ClCompile>
@@ -93,9 +90,6 @@
     </ClCompile>
     <ClCompile Include="src\Batumo\Log.cpp">
       <Filter>Batumo</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Plataform\OpenGL\imgui_impl_opengl3.cpp">
-      <Filter>Plataform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Plataform\Windows\WindowsInput.cpp">
       <Filter>Plataform\Windows</Filter>
