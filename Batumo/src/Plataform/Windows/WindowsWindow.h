@@ -1,8 +1,10 @@
 #pragma once
 
 #include "Batumo/Window.h"
+#include "Batumo/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>
+
 
 namespace Batumo{
 
@@ -29,6 +31,7 @@ namespace Batumo{
 
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData {
 			std::string Title;

@@ -71,6 +71,8 @@
       <Filter>Plataform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\btpch.h" />
+    <ClInclude Include="src\Batumo\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Plataform\OpenGL\OpenGLContext.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Batumo\Application.cpp">
@@ -98,5 +100,6 @@
       <Filter>Plataform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\btpch.cpp" />
+    <ClCompile Include="src\Plataform\OpenGL\OpenGLContext.cpp" />
   </ItemGroup>
 </Project>

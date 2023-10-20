@@ -140,6 +140,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Plataform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Batumo.h" />
     <ClInclude Include="src\Batumo\Application.h" />
     <ClInclude Include="src\Batumo\Core.h" />
@@ -155,12 +156,14 @@
     <ClInclude Include="src\Batumo\Layer.h" />
     <ClInclude Include="src\Batumo\LayerStack.h" />
     <ClInclude Include="src\Batumo\Log.h" />
+    <ClInclude Include="src\Batumo\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Batumo\Window.h" />
     <ClInclude Include="src\Plataform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Plataform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\btpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Plataform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Batumo\Application.cpp" />
     <ClCompile Include="src\Batumo\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Batumo\ImGui\ImGuiLayer.cpp" />
