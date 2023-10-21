@@ -73,6 +73,10 @@
     <ClInclude Include="src\btpch.h" />
     <ClInclude Include="src\Batumo\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Plataform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="src\Batumo\Renderer\Shader.h" />
+    <ClInclude Include="src\Batumo\Renderer\Buffer.h" />
+    <ClInclude Include="src\Plataform\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="src\Batumo\Renderer\Renderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Batumo\Application.cpp">
@@ -101,5 +105,9 @@
     </ClCompile>
     <ClCompile Include="src\btpch.cpp" />
     <ClCompile Include="src\Plataform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="src\Batumo\Renderer\Shader.cpp" />
+    <ClCompile Include="src\Batumo\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\Plataform\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="src\Batumo\Renderer\Renderer.cpp" />
   </ItemGroup>
 </Project>
