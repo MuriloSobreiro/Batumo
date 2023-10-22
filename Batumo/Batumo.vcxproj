@@ -140,6 +140,9 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Batumo\Renderer\RendererCommand.h" />
+    <ClInclude Include="src\Plataform\OpenGL\OpenGLRendererAPI.h" />
+    <ClInclude Include="src\Batumo\Renderer\RendererAPI.h" />
     <ClInclude Include="src\Batumo\Renderer\Buffer.h" />
     <ClInclude Include="src\Batumo\Renderer\Renderer.h" />
     <ClInclude Include="src\Batumo\Renderer\Shader.h" />
@@ -169,6 +172,9 @@
     <ClInclude Include="src\btpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Batumo\Renderer\RendererCommand.cpp" />
+    <ClCompile Include="src\Plataform\OpenGL\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="src\Batumo\Renderer\RendererAPI.cpp" />
     <ClCompile Include="src\Batumo\Renderer\Buffer.cpp" />
     <ClCompile Include="src\Batumo\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Batumo\Renderer\Shader.cpp" />

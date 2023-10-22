@@ -1,8 +1,7 @@
 #include "btpch.h"
 #include "Application.h"
 
-
-#include <glad/glad.h>
+#include "Renderer/Renderer.h"
 
 namespace Batumo {
 
@@ -143,17 +142,18 @@ namespace Batumo {
 
 	void Application::Run() {
 		while (m_Runnig) {
-			glClearColor(0, 0.9, 0.1, 1);
-			glClear(GL_COLOR_BUFFER_BIT);
+			RenderCommand::SetClearColor({ 0.3,0.2,0.5,1.0 });
+			RenderCommand::Clear();
+
+			Renderer::BeginScene();
 
 			m_BlueShader->Bind();
-			m_SquareVA->Bind();
-			glDrawElements(GL_TRIANGLES, m_SquareVA->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
-
+			Renderer::Submit(m_SquareVA);
 			m_Shader->Bind();
-			m_VertexArray->Bind();
-			glDrawElements(GL_TRIANGLES, m_VertexArray->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
 
+			Renderer::Submit(m_VertexArray);
+
+			Renderer::EndScene();
 			m_ImGuiLayer->Begin();
 			for (Layer* layer : m_LayerStack)
 				layer->OnImGuiRender();
