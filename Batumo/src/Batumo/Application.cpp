@@ -9,12 +9,17 @@ namespace Batumo {
 
 	Application* Application::s_Instance = nullptr;
 
-	Application::Application() {
+	Application::Application()
+		: m_Camera(45.0f, 1280, 720)
+	{
 		BT_CORE_ASSERT(!s_Instance, "Aplication already exists!");
 		s_Instance = this;
 
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+
+		m_Camera = PerspectiveCamera(45.0f, m_Window->GetWidth(), m_Window->GetHeight());
+		m_Camera.Move({ 0,0,-3 });
 
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);
@@ -22,8 +27,8 @@ namespace Batumo {
 		m_VertexArray.reset(VertexArray::Create());
 
 		float vertices[3 * 7] = {
-			-0.5f, -0.5f, 0.0f, 0.8f, 0.2f, 0.8f, 1.0f,
-			 0.5f, -0.5f, 0.0f, 0.2f, 0.3f, 0.8f, 1.0f,
+			-0.5f, -0.5f, 0.2f, 0.8f, 0.2f, 0.8f, 1.0f,
+			 0.5f, -0.5f, 0.2f, 0.2f, 0.3f, 0.8f, 1.0f,
 			 0.0f,  0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
 		};
 
@@ -65,13 +70,17 @@ namespace Batumo {
 			
 			layout(location = 0) in vec3 a_Position;
 			layout(location = 1) in vec4 a_Color;
+
+			uniform mat4 transform;
+
 			out vec3 v_Position;
 			out vec4 v_Color;
 			void main()
 			{
 				v_Position = a_Position;
 				v_Color = a_Color;
-				gl_Position = vec4(a_Position, 1.0);	
+				gl_Position = transform * vec4(a_Position, 1.0f);
+
 			}
 		)";
 
@@ -83,7 +92,7 @@ namespace Batumo {
 			in vec4 v_Color;
 			void main()
 			{
-				color = vec4(v_Position * 0.5 + 0.6, 1.0);
+				color = vec4(v_Position * 0.5 + 0.6, 1.0f);
 				color = v_Color;
 			}
 		)";
@@ -94,11 +103,14 @@ namespace Batumo {
 			#version 330 core
 			
 			layout(location = 0) in vec3 a_Position;
+
+			uniform mat4 transform;
+
 			out vec3 v_Position;
 			void main()
 			{
 				v_Position = a_Position;
-				gl_Position = vec4(a_Position, 1.0);	
+				gl_Position = transform * vec4(a_Position, 1.0f);
 			}
 		)";
 
@@ -142,16 +154,16 @@ namespace Batumo {
 
 	void Application::Run() {
 		while (m_Runnig) {
+			m_Camera.RotateDegrees({ 1,1,1 });
+			//m_Camera.Move({ 0.01, 0, 0 });
+
 			RenderCommand::SetClearColor({ 0.3,0.2,0.5,1.0 });
 			RenderCommand::Clear();
 
-			Renderer::BeginScene();
+			Renderer::BeginScene(m_Camera);
 
-			m_BlueShader->Bind();
-			Renderer::Submit(m_SquareVA);
-			m_Shader->Bind();
-
-			Renderer::Submit(m_VertexArray);
+			Renderer::Submit(m_BlueShader,m_SquareVA);
+			Renderer::Submit(m_Shader,m_VertexArray);
 
 			Renderer::EndScene();
 			m_ImGuiLayer->Begin();

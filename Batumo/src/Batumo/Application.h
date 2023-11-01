@@ -38,6 +38,7 @@ namespace Batumo {
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Runnig = true;
 		LayerStack m_LayerStack;
+		PerspectiveCamera m_Camera;
 
 		std::shared_ptr<Shader> m_Shader;
 		std::shared_ptr<VertexArray> m_VertexArray;

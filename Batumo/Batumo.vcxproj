@@ -140,6 +140,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Batumo\Renderer\Camera.h" />
     <ClInclude Include="src\Batumo\Renderer\RendererCommand.h" />
     <ClInclude Include="src\Plataform\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="src\Batumo\Renderer\RendererAPI.h" />
@@ -172,6 +173,7 @@
     <ClInclude Include="src\btpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Batumo\Renderer\Camera.cpp" />
     <ClCompile Include="src\Batumo\Renderer\RendererCommand.cpp" />
     <ClCompile Include="src\Plataform\OpenGL\OpenGLRendererAPI.cpp" />
     <ClCompile Include="src\Batumo\Renderer\RendererAPI.cpp" />

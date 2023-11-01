@@ -2,6 +2,8 @@
 #include "Shader.h"
 
 #include "glad/glad.h"
+#include <glm/gtc/type_ptr.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
 namespace Batumo {
 	Shader::Shader(const std::string& vertexSrc, const std::string& fragmentSrc)
@@ -124,6 +126,11 @@ namespace Batumo {
 	void Batumo::Shader::Unbind()
 	{
 		glUseProgram(0);
+	}
+	void Shader::UploadUniformMat4(std::string name, glm::mat4 matrix)
+	{
+		unsigned int transformLoc = glGetUniformLocation(m_RendererID, name.c_str());
+		glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(matrix));
 	}
 }
 
