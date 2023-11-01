@@ -8,10 +8,6 @@
 #include "Window.h"
 #include "Batumo/LayerStack.h"
 
-#include "Batumo/Renderer/Shader.h"
-#include "Batumo/Renderer/Buffer.h"
-#include "Batumo/Renderer/VertexArray.h"
-
 namespace Batumo {
 
 	class BATUMO_API Application
@@ -38,12 +34,6 @@ namespace Batumo {
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Runnig = true;
 		LayerStack m_LayerStack;
-		PerspectiveCamera m_Camera;
-
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
-		std::shared_ptr<Shader> m_BlueShader;
-		std::shared_ptr<VertexArray> m_SquareVA;
 	};
 
 	Application* CreateApplication();

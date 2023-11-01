@@ -10,6 +10,17 @@
 
 #include "Batumo/ImGui/ImGuiLayer.h"
 
+//Renderer----------
+#include "Batumo/Renderer/Camera.h"
+
+#include "Batumo/Renderer/Renderer.h"
+#include "Batumo/Renderer/RendererCommand.h"
+
+#include "Batumo/Renderer/Buffer.h"
+#include "Batumo/Renderer/Shader.h"
+#include "Batumo/Renderer/VertexArray.h"
+//-------------------
+
 //Entry Point--------
 #include "Batumo/EntryPoint.h"
 //-------------------
