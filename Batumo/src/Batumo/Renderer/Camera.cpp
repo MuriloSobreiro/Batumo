@@ -6,9 +6,13 @@
 namespace Batumo {
 	PerspectiveCamera::PerspectiveCamera(float fov, float width, float height)
 	{
-		m_ProjectionMatrix = glm::perspective(glm::radians(fov), width / height, 0.1f, 100.0f);
+		RecalculateProjectionMatrix(fov, width, height);
 		m_ViewMatrix = glm::mat4(1.0f);
 		RecalculateViewMatrix();
+	}
+	void PerspectiveCamera::RecalculateProjectionMatrix(float fov, float width, float height)
+	{
+		m_ProjectionMatrix = glm::perspective(glm::radians(fov), width / height, 0.1f, 100.0f);
 	}
 	void PerspectiveCamera::RecalculateViewMatrix()
 	{

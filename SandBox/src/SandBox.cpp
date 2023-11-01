@@ -120,13 +120,13 @@ public:
 		if (Batumo::Input::IsKeyPressed(BT_KEY_DOWN))
 			m_CameraPosition.y -= m_CameraMoveSpeed;
 		if(Batumo::Input::IsKeyPressed(BT_KEY_W))
-			m_CameraRotation.x -= m_CAmeraRotationSpeed;
+			m_CameraRotation.x -= m_CameraRotationSpeed;
 		if (Batumo::Input::IsKeyPressed(BT_KEY_S))
-			m_CameraRotation.x += m_CAmeraRotationSpeed;
+			m_CameraRotation.x += m_CameraRotationSpeed;
 		if (Batumo::Input::IsKeyPressed(BT_KEY_A))
-			m_CameraRotation.y += m_CAmeraRotationSpeed;
+			m_CameraRotation.y += m_CameraRotationSpeed;
 		if (Batumo::Input::IsKeyPressed(BT_KEY_D))
-			m_CameraRotation.y -= m_CAmeraRotationSpeed;
+			m_CameraRotation.y -= m_CameraRotationSpeed;
 
 		m_Camera.SetPosition(m_CameraPosition);
 		m_Camera.SetRotation(m_CameraRotation);
@@ -160,7 +160,7 @@ private:
 	glm::vec3 m_CameraPosition;
 	float m_CameraMoveSpeed = 0.1f;
 	glm::vec3 m_CameraRotation;
-	float m_CAmeraRotationSpeed = 1.0f;
+	float m_CameraRotationSpeed = 1.0f;
 
 };
 

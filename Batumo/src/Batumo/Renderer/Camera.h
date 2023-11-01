@@ -12,6 +12,8 @@ namespace Batumo {
 		const glm::mat4& GetProjectionMatrix() const { return m_ProjectionMatrix; }
 		const glm::mat4& GetViewMatrix() const { return m_ViewMatrix; }
 		const glm::mat4& GetViewProjectionMatrix() const { return m_ViewProjectionMatrix; }
+
+		virtual void RecalculateProjectionMatrix(float fov, float width, float height) = 0;
 	protected:
 		virtual void RecalculateViewMatrix() = 0;
 	protected:
@@ -44,6 +46,7 @@ namespace Batumo {
 		const glm::vec3& GetRotation() const { return m_Rotation; }
 		void SetRotation(glm::vec3 rotation) { m_Rotation = rotation; RecalculateViewMatrix();}
 		void RotateDegrees(glm::vec3 rotation) { m_Rotation += rotation; RecalculateViewMatrix();}
+		virtual void RecalculateProjectionMatrix(float fov, float width, float height) override;
 	private:
 		virtual void RecalculateViewMatrix() override;
 	private:
