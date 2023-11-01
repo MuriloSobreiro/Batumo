@@ -4,6 +4,8 @@
 #include "Batumo/Layer.h"
 #include "Batumo/Log.h"
 
+#include "Batumo/Core/DeltaTime.h"
+
 #include "Batumo/Input.h"
 #include "Batumo/Events/KeyCodes.h"
 #include "Batumo/Events/MouseButtonCodes.h"

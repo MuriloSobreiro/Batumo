@@ -83,6 +83,7 @@
     <ClInclude Include="src\Plataform\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="src\Batumo\Renderer\RendererCommand.h" />
     <ClInclude Include="src\Batumo\Renderer\Camera.h" />
+    <ClInclude Include="src\Batumo\Core\DeltaTime.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Batumo\Application.cpp">

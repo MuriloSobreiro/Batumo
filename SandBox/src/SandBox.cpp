@@ -110,23 +110,23 @@ public:
 		m_BlueShader.reset(new Batumo::Shader(blueShaderVertexSrc, blueShaderFragmentSrc));
 	}
 
-	void OnUpdate() override {
+	void OnUpdate(Batumo::DeltaTime dt) override {
 		if (Batumo::Input::IsKeyPressed(BT_KEY_LEFT))
-			m_CameraPosition.x += m_CameraMoveSpeed;
+			m_CameraPosition.x += m_CameraMoveSpeed * dt;
 		if (Batumo::Input::IsKeyPressed(BT_KEY_RIGHT))
-			m_CameraPosition.x -= m_CameraMoveSpeed;
+			m_CameraPosition.x -= m_CameraMoveSpeed * dt;
 		if (Batumo::Input::IsKeyPressed(BT_KEY_UP))
-			m_CameraPosition.y += m_CameraMoveSpeed;
+			m_CameraPosition.y += m_CameraMoveSpeed * dt;
 		if (Batumo::Input::IsKeyPressed(BT_KEY_DOWN))
-			m_CameraPosition.y -= m_CameraMoveSpeed;
+			m_CameraPosition.y -= m_CameraMoveSpeed * dt;
 		if(Batumo::Input::IsKeyPressed(BT_KEY_W))
-			m_CameraRotation.x -= m_CameraRotationSpeed;
+			m_CameraRotation.x -= m_CameraRotationSpeed * dt;
 		if (Batumo::Input::IsKeyPressed(BT_KEY_S))
-			m_CameraRotation.x += m_CameraRotationSpeed;
+			m_CameraRotation.x += m_CameraRotationSpeed * dt;
 		if (Batumo::Input::IsKeyPressed(BT_KEY_A))
-			m_CameraRotation.y += m_CameraRotationSpeed;
+			m_CameraRotation.y += m_CameraRotationSpeed * dt;
 		if (Batumo::Input::IsKeyPressed(BT_KEY_D))
-			m_CameraRotation.y -= m_CameraRotationSpeed;
+			m_CameraRotation.y -= m_CameraRotationSpeed * dt;
 
 		m_Camera.SetPosition(m_CameraPosition);
 		m_Camera.SetRotation(m_CameraRotation);
@@ -158,9 +158,9 @@ private:
 	std::shared_ptr<Batumo::VertexArray> m_SquareVA;
 
 	glm::vec3 m_CameraPosition;
-	float m_CameraMoveSpeed = 0.1f;
+	float m_CameraMoveSpeed = 10.0f;
 	glm::vec3 m_CameraRotation;
-	float m_CameraRotationSpeed = 1.0f;
+	float m_CameraRotationSpeed = 100.0f;
 
 };
 

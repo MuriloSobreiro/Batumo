@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Batumo/Core.h"
+#include "Batumo/Core/DeltaTime.h"
 #include "Batumo/Events/Event.h"
 
 
@@ -13,7 +14,7 @@ namespace Batumo {
 
 		virtual void OnAttach(){}
 		virtual void OnDetach(){}
-		virtual void OnUpdate(){}
+		virtual void OnUpdate(DeltaTime dt){}
 		virtual void OnImGuiRender(){}
 		virtual void OnEvent(Event& event){}
 		

@@ -3,6 +3,9 @@
 
 #include "Renderer/Renderer.h"
 
+//Temporario
+#include "GLFW/glfw3.h"
+
 namespace Batumo {
 
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
@@ -47,8 +50,11 @@ namespace Batumo {
 
 	void Application::Run() {
 		while (m_Runnig) {
+			float time = (float)glfwGetTime();
+			DeltaTime deltaTime = time - m_LastFrameTime;
+			m_LastFrameTime = time;
 			for (Layer* layer : m_LayerStack)
-				layer->OnUpdate();
+				layer->OnUpdate(deltaTime);
 			m_ImGuiLayer->Begin();
 			for (Layer* layer : m_LayerStack)
 				layer->OnImGuiRender();
