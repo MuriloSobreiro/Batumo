@@ -17,7 +17,7 @@ public:
 			 0.0f,  0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
 		};
 
-		std::shared_ptr<Batumo::VertexBuffer> vertexBuffer;
+		Batumo::Ref<Batumo::VertexBuffer> vertexBuffer;
 		vertexBuffer.reset(Batumo::VertexBuffer::Create(vertices, sizeof(vertices)));
 		Batumo::BufferLayout layout = {
 			{ Batumo::ShaderDataType::Float3, "a_Position" },
@@ -26,7 +26,7 @@ public:
 		vertexBuffer->SetLayout(layout);
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 		uint32_t indices[3] = { 0, 1, 2 };
-		std::shared_ptr<Batumo::IndexBuffer> indexBuffer;
+		Batumo::Ref<Batumo::IndexBuffer> indexBuffer;
 		indexBuffer.reset(Batumo::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 		m_SquareVA.reset(Batumo::VertexArray::Create());
@@ -38,7 +38,7 @@ public:
 			-0.5f,  0.5f, 0.0f
 		};
 
-		std::shared_ptr<Batumo::VertexBuffer> squareVB;
+		Batumo::Ref<Batumo::VertexBuffer> squareVB;
 		squareVB.reset(Batumo::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 		squareVB->SetLayout({
 			{ Batumo::ShaderDataType::Float3, "a_Position" }
@@ -46,7 +46,7 @@ public:
 		m_SquareVA->AddVertexBuffer(squareVB);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		std::shared_ptr<Batumo::IndexBuffer> squareIB;
+		Batumo::Ref<Batumo::IndexBuffer> squareIB;
 		squareIB.reset(Batumo::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
@@ -174,11 +174,11 @@ public:
 private:
 	Batumo::PerspectiveCamera m_Camera;
 
-	std::shared_ptr<Batumo::Shader> m_Shader;
-	std::shared_ptr<Batumo::VertexArray> m_VertexArray;
+	Batumo::Ref<Batumo::Shader> m_Shader;
+	Batumo::Ref<Batumo::VertexArray> m_VertexArray;
 
-	std::shared_ptr<Batumo::Shader> m_BlueShader;
-	std::shared_ptr<Batumo::VertexArray> m_SquareVA;
+	Batumo::Ref<Batumo::Shader> m_BlueShader;
+	Batumo::Ref<Batumo::VertexArray> m_SquareVA;
 
 	glm::vec3 m_CameraPosition;
 	float m_CameraMoveSpeed = 10.0f;
