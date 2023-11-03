@@ -1,8 +1,6 @@
 #include "btpch.h"
 #include "Camera.h"
 
-
-
 namespace Batumo {
 	PerspectiveCamera::PerspectiveCamera(float fov, float width, float height)
 	{
@@ -16,15 +14,15 @@ namespace Batumo {
 	}
 	void PerspectiveCamera::RecalculateViewMatrix()
 	{
-		float pitch = glm::radians(m_Rotation.y), yaw = glm::radians(m_Rotation.z), roll = glm::radians(m_Rotation.x);
-		m_forward.x = glm::sin(roll) * glm::sin(yaw) + glm::cos(roll) * glm::cos(yaw) * glm::sin(pitch);
-		m_forward.y = glm::cos(roll) * glm::sin(pitch) * glm::sin(yaw) - glm::cos(yaw) * glm::sin(roll);
-		m_forward.z = glm::cos(pitch) * glm::cos(roll);
+		float pitch = glm::radians(m_Rotation.x), yaw = glm::radians(m_Rotation.y), roll = glm::radians(m_Rotation.z);
+		m_forward.x = glm::sin(pitch) * glm::sin(roll) + glm::cos(pitch) * glm::cos(roll) * glm::sin(yaw);
+		m_forward.y = glm::cos(pitch) * glm::sin(yaw) * glm::sin(roll) - glm::cos(roll) * glm::sin(pitch);
+		m_forward.z = glm::cos(yaw) * glm::cos(pitch);
 		m_forward = glm::normalize(m_forward);
 
-		m_right.x = glm::cos(pitch) * glm::cos(yaw);
-		m_right.y = glm::cos(pitch) * glm::sin(yaw);
-		m_right.z = -glm::sin(pitch);
+		m_right.x = glm::cos(yaw) * glm::cos(roll);
+		m_right.y = glm::cos(yaw) * glm::sin(roll);
+		m_right.z = -glm::sin(yaw);
 		m_right = glm::normalize(m_right);
 
 		m_up = glm::normalize(glm::cross(m_forward, m_right));

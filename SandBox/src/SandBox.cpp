@@ -4,7 +4,7 @@
 class ExampleLayer : public Batumo::Layer {
 public:
 	ExampleLayer()
-		: Layer("Example"), m_Camera(45.0f, 1280, 720), m_CameraPosition(0,0,-3), m_CameraRotation(0,0,0) {
+		: Layer("Example"), m_Camera(45.0f, 1280, 720), m_CameraPosition(0,0,-3) {
 		
 		m_VertexArray.reset(Batumo::VertexArray::Create());
 
@@ -110,28 +110,35 @@ public:
 		)";
 
 		m_BlueShader.reset(new Batumo::Shader(blueShaderVertexSrc, blueShaderFragmentSrc));
+		Batumo::Input::DisableMouse();
 	}
 
 	void OnUpdate(Batumo::DeltaTime dt) override {
-		if (Batumo::Input::IsKeyPressed(BT_KEY_LEFT))
-			m_CameraPosition.x += m_CameraMoveSpeed * dt;
-		if (Batumo::Input::IsKeyPressed(BT_KEY_RIGHT))
-			m_CameraPosition.x -= m_CameraMoveSpeed * dt;
-		if (Batumo::Input::IsKeyPressed(BT_KEY_UP))
-			m_CameraPosition.y += m_CameraMoveSpeed * dt;
-		if (Batumo::Input::IsKeyPressed(BT_KEY_DOWN))
-			m_CameraPosition.y -= m_CameraMoveSpeed * dt;
-		if(Batumo::Input::IsKeyPressed(BT_KEY_W))
-			m_CameraRotation.x -= m_CameraRotationSpeed * dt;
-		if (Batumo::Input::IsKeyPressed(BT_KEY_S))
-			m_CameraRotation.x += m_CameraRotationSpeed * dt;
+		m_CameraPosition = { 0,0,0 };
 		if (Batumo::Input::IsKeyPressed(BT_KEY_A))
-			m_CameraRotation.y += m_CameraRotationSpeed * dt;
+			m_CameraPosition.x += m_CameraMoveSpeed * dt;
 		if (Batumo::Input::IsKeyPressed(BT_KEY_D))
-			m_CameraRotation.y -= m_CameraRotationSpeed * dt;
+			m_CameraPosition.x -= m_CameraMoveSpeed * dt;
+		if (Batumo::Input::IsKeyPressed(BT_KEY_W))
+			m_CameraPosition.z += m_CameraMoveSpeed * dt;
+		if (Batumo::Input::IsKeyPressed(BT_KEY_S))
+			m_CameraPosition.z -= m_CameraMoveSpeed * dt;
 
-		m_Camera.SetPosition(m_CameraPosition);
-		m_Camera.SetRotation(m_CameraRotation);
+		m_Camera.Move(m_CameraPosition);
+
+		if (Batumo::Input::IsKeyPressed(BT_KEY_ESCAPE)) {
+			if(m_Mouse)
+				Batumo::Input::DisableMouse();
+			else
+				Batumo::Input::EnableMouse();
+			m_Mouse = !m_Mouse;
+		}
+		if (!m_Mouse) {
+			auto rotation = Batumo::Input::GetMouseDelta();
+			m_Camera.RotateDegrees({ rotation.second * m_CameraRotationSpeed * dt, rotation.first * m_CameraRotationSpeed * dt, 0 });
+		}
+
+		
 
 		Batumo::RenderCommand::SetClearColor({ 0.3,0.2,0.5,1.0 });
 		Batumo::RenderCommand::Clear();
@@ -172,8 +179,8 @@ private:
 
 	glm::vec3 m_CameraPosition;
 	float m_CameraMoveSpeed = 10.0f;
-	glm::vec3 m_CameraRotation;
-	float m_CameraRotationSpeed = 100.0f;
+	float m_CameraRotationSpeed = 10.0f;
+	bool m_Mouse = false;
 
 };
 

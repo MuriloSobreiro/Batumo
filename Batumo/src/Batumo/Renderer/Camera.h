@@ -41,7 +41,7 @@ namespace Batumo {
 	public:
 		PerspectiveCamera(float fov, float width, float height);
 
-		void Move(glm::vec3 position) { m_Position += position; RecalculateViewMatrix(); }
+		void Move(glm::vec3 position) { m_Position += (position.z * m_forward + position.x * m_right); RecalculateViewMatrix(); }
 
 		const glm::vec3& GetRotation() const { return m_Rotation; }
 		void SetRotation(glm::vec3 rotation) { m_Rotation = rotation; RecalculateViewMatrix();}
