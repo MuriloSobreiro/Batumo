@@ -169,6 +169,7 @@
     <ClInclude Include="src\Batumo\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Batumo\Window.h" />
     <ClInclude Include="src\Plataform\OpenGL\OpenGLVertexArray.h" />
+    <ClInclude Include="src\Plataform\OpenGL\OpenGLShader.h" />
     <ClInclude Include="src\Plataform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Plataform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\btpch.h" />
@@ -191,6 +192,7 @@
     <ClCompile Include="src\Batumo\LayerStack.cpp" />
     <ClCompile Include="src\Batumo\Log.cpp" />
     <ClCompile Include="src\Plataform\OpenGL\OpenGLVertexArray.cpp" />
+    <ClCompile Include="src\Plataform\OpenGL\OpenGLShader.cpp" />
     <ClCompile Include="src\Plataform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Plataform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\btpch.cpp">

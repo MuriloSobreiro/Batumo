@@ -1,5 +1,8 @@
 #include "Batumo.h"
 
+#include "Plataform/OpenGL/OpenGLShader.h"
+#include <glm/gtc/type_ptr.hpp>
+
 
 class ExampleLayer : public Batumo::Layer {
 public:
@@ -80,7 +83,7 @@ public:
 			}
 		)";
 
-		m_Shader.reset(new Batumo::Shader(vertexSrc, fragmentSrc));
+		m_Shader.reset(Batumo::Shader::Create(vertexSrc, fragmentSrc));
 
 		std::string blueShaderVertexSrc = R"(
 			#version 330 core
@@ -109,7 +112,7 @@ public:
 			}
 		)";
 
-		m_BlueShader.reset(new Batumo::Shader(blueShaderVertexSrc, blueShaderFragmentSrc));
+		m_BlueShader.reset(Batumo::Shader::Create(blueShaderVertexSrc, blueShaderFragmentSrc));
 		Batumo::Input::DisableMouse();
 	}
 

@@ -2,6 +2,8 @@
 #include "Renderer.h"
 
 
+#include "Plataform/OpenGL/OpenGLShader.h"
+
 namespace Batumo{
 	Renderer::SceneData* Renderer::m_SceneData = new Renderer::SceneData;
 
@@ -17,8 +19,8 @@ namespace Batumo{
 	void Renderer::Submit(const std::shared_ptr<Shader>& shader, const std::shared_ptr<VertexArray>& vertexArray, const glm::mat4 model)
 	{
 		shader->Bind();
-		shader->UploadUniformMat4("u_Transform", m_SceneData->ViewProjectionMatrix);
-		shader->UploadUniformMat4("u_Model", model);
+		std::dynamic_pointer_cast<OpenGLShader>(shader)->UploadUniformMat4("u_Transform", m_SceneData->ViewProjectionMatrix);
+		std::dynamic_pointer_cast<OpenGLShader>(shader)->UploadUniformMat4("u_Model", model);
 		vertexArray->Bind();
 		RenderCommand::DrawIndexed(vertexArray);
 	}

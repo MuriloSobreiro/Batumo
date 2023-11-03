@@ -84,6 +84,7 @@
     <ClInclude Include="src\Batumo\Renderer\RendererCommand.h" />
     <ClInclude Include="src\Batumo\Renderer\Camera.h" />
     <ClInclude Include="src\Batumo\Core\DeltaTime.h" />
+    <ClInclude Include="src\Plataform\OpenGL\OpenGLShader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Batumo\Application.cpp">
@@ -122,5 +123,6 @@
     <ClCompile Include="src\Plataform\OpenGL\OpenGLRendererAPI.cpp" />
     <ClCompile Include="src\Batumo\Renderer\RendererCommand.cpp" />
     <ClCompile Include="src\Batumo\Renderer\Camera.cpp" />
+    <ClCompile Include="src\Plataform\OpenGL\OpenGLShader.cpp" />
   </ItemGroup>
 </Project>
