@@ -6,19 +6,19 @@
 #include <glad/glad.h>
 
 namespace Batumo {
-	OpenGLTexture2D::OpenGLTexture2D(const std::string& path, uint16_t type)
+	OpenGLTexture2D::OpenGLTexture2D(const std::string& path)
 		: m_Path(path)
 	{
-		GLenum storage, sub;
-		storage = type == 0 ? GL_RGB8 : GL_RGBA8;
-		sub = type == 0 ? GL_RGB : GL_RGBA;
-
 		int width, height, channels;
 		stbi_set_flip_vertically_on_load(1);
 		stbi_uc* data = stbi_load(path.c_str(), &width, &height, &channels, 0);
 		BT_CORE_ASSERT(data, "Failed to load image!");
 		m_Width = width;
 		m_Height = height;
+
+		GLenum storage, sub;
+		storage = channels == 3 ? GL_RGB8 : GL_RGBA8;
+		sub = channels == 3 ? GL_RGB : GL_RGBA;
 
 		glCreateTextures(GL_TEXTURE_2D, 1, &m_RendererID);
 		glTextureStorage2D(m_RendererID, 1, storage, m_Width, m_Height);

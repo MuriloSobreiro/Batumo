@@ -148,7 +148,8 @@ public:
 
 		m_TextureShader.reset(Batumo::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
 
-		m_Texture = Batumo::Texture2D::Create("assets/textures/Grama.png", 1);
+		m_Texture = Batumo::Texture2D::Create("assets/textures/Grama.png");
+		m_Shrek = Batumo::Texture2D::Create("assets/textures/Shrek.png");
 
 		std::dynamic_pointer_cast<Batumo::OpenGLShader>(m_TextureShader)->Bind();
 		std::dynamic_pointer_cast<Batumo::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
@@ -203,6 +204,8 @@ public:
 		Batumo::Renderer::Submit(m_Shader, m_VertexArray);
 		m_Texture->Bind();
 		Batumo::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		m_Shrek->Bind();
+		Batumo::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		Batumo::Renderer::EndScene();
 	}
@@ -222,7 +225,7 @@ private:
 	Batumo::Ref<Batumo::Shader> m_BlueShader, m_TextureShader;
 	Batumo::Ref<Batumo::VertexArray> m_SquareVA;
 
-	Batumo::Ref<Batumo::Texture2D> m_Texture;
+	Batumo::Ref<Batumo::Texture2D> m_Texture, m_Shrek;
 
 	glm::vec3 m_CameraPosition;
 	float m_CameraMoveSpeed = 10.0f;

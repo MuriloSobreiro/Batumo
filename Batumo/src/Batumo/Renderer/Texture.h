@@ -13,7 +13,7 @@ namespace Batumo {
 
 	class Texture2D : public Texture {
 	public:
-		static Ref<Texture2D> Create(const std::string& path, uint16_t type);
+		static Ref<Texture2D> Create(const std::string& path);
 	};
 }
 

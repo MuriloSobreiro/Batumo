@@ -6,7 +6,7 @@ namespace Batumo {
 	class OpenGLTexture2D : public Texture2D
 	{
 	public:
-		OpenGLTexture2D(const std::string& path, uint16_t type);
+		OpenGLTexture2D(const std::string& path);
 		virtual ~OpenGLTexture2D();
 
 		// Herdado por meio de Texture2D
