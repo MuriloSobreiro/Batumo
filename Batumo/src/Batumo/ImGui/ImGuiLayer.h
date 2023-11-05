@@ -7,7 +7,7 @@
 #include "Batumo/Events/ApplicationEvent.h"
 
 namespace Batumo {
-	class BATUMO_API ImGuiLayer: public Layer
+	class ImGuiLayer: public Layer
 	{
 	public:
 		ImGuiLayer();

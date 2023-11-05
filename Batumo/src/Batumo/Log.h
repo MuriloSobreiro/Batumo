@@ -5,7 +5,7 @@
 #include "spdlog/fmt/ostr.h"
 
 namespace Batumo {
-	class BATUMO_API Log
+	class Log
 	{
 	public:
 		static void Init();

@@ -12,7 +12,7 @@
 
 namespace Batumo {
 
-	class BATUMO_API Application
+	class Application
 	{
 	public:
 		Application();

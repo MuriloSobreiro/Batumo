@@ -1,128 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Batumo">
-      <UniqueIdentifier>{4D63F0A8-3905-1B7F-22C0-2ED30E01A2CF}</UniqueIdentifier>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Batumo\Events">
-      <UniqueIdentifier>{91B6858B-FD76-01C2-C6B1-4A3F3231469E}</UniqueIdentifier>
+    <Filter Include="src\Batumo">
+      <UniqueIdentifier>{843C4F06-70F4-9053-D9FB-69AFC5D22B44}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Batumo\ImGui">
-      <UniqueIdentifier>{375EBBFC-23C1-4AA1-CC46-8357B8881624}</UniqueIdentifier>
+    <Filter Include="src\Batumo\Core">
+      <UniqueIdentifier>{5CD3967C-C85E-0441-D16F-87353D7A6041}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Plataform">
-      <UniqueIdentifier>{CB364245-37A1-F6BB-80DF-A761EC88D410}</UniqueIdentifier>
+    <Filter Include="src\Batumo\Events">
+      <UniqueIdentifier>{E82BBB02-5442-B998-9DB9-44BA090F8A20}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Plataform\Windows">
-      <UniqueIdentifier>{057CD38B-7192-D121-BA09-5D43265FA2A9}</UniqueIdentifier>
+    <Filter Include="src\Batumo\ImGui">
+      <UniqueIdentifier>{AE04DC0F-9AFD-FA61-C32F-E0E6AF87DA6D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Batumo\Renderer">
+      <UniqueIdentifier>{AAD43095-1636-0EA3-9FA3-54550B044562}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Plataform">
+      <UniqueIdentifier>{A298FC84-0E59-78BB-D793-C1384313BD97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Plataform\OpenGL">
+      <UniqueIdentifier>{96F7E60B-8286-70D5-2BA5-84D01713817B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Plataform\Windows">
+      <UniqueIdentifier>{DCC4E1E0-4831-9DDB-1125-35397D50BF43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor">
+      <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\stb_image">
+      <UniqueIdentifier>{0DA0BA59-F998-D9AB-22CB-BE300E23B9B7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Batumo.h" />
+    <ClInclude Include="src\Batumo.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="src\Batumo\Application.h">
-      <Filter>Batumo</Filter>
+      <Filter>src\Batumo</Filter>
     </ClInclude>
     <ClInclude Include="src\Batumo\Core.h">
-      <Filter>Batumo</Filter>
+      <Filter>src\Batumo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Batumo\Core\DeltaTime.h">
+      <Filter>src\Batumo\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Batumo\EntryPoint.h">
-      <Filter>Batumo</Filter>
+      <Filter>src\Batumo</Filter>
     </ClInclude>
     <ClInclude Include="src\Batumo\Events\ApplicationEvent.h">
-      <Filter>Batumo\Events</Filter>
+      <Filter>src\Batumo\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Batumo\Events\Event.h">
-      <Filter>Batumo\Events</Filter>
+      <Filter>src\Batumo\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Batumo\Events\KeyCodes.h">
-      <Filter>Batumo\Events</Filter>
+      <Filter>src\Batumo\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Batumo\Events\KeyEvent.h">
-      <Filter>Batumo\Events</Filter>
+      <Filter>src\Batumo\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Batumo\Events\MouseButtonCodes.h">
-      <Filter>Batumo\Events</Filter>
+      <Filter>src\Batumo\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Batumo\Events\MouseEvent.h">
-      <Filter>Batumo\Events</Filter>
+      <Filter>src\Batumo\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Batumo\ImGui\ImGuiLayer.h">
-      <Filter>Batumo\ImGui</Filter>
+      <Filter>src\Batumo\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="src\Batumo\Input.h">
-      <Filter>Batumo</Filter>
+      <Filter>src\Batumo</Filter>
     </ClInclude>
     <ClInclude Include="src\Batumo\Layer.h">
-      <Filter>Batumo</Filter>
+      <Filter>src\Batumo</Filter>
     </ClInclude>
     <ClInclude Include="src\Batumo\LayerStack.h">
-      <Filter>Batumo</Filter>
+      <Filter>src\Batumo</Filter>
     </ClInclude>
     <ClInclude Include="src\Batumo\Log.h">
-      <Filter>Batumo</Filter>
+      <Filter>src\Batumo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Batumo\Renderer\Buffer.h">
+      <Filter>src\Batumo\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Batumo\Renderer\Camera.h">
+      <Filter>src\Batumo\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Batumo\Renderer\GraphicsContext.h">
+      <Filter>src\Batumo\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Batumo\Renderer\Renderer.h">
+      <Filter>src\Batumo\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Batumo\Renderer\RendererAPI.h">
+      <Filter>src\Batumo\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Batumo\Renderer\RendererCommand.h">
+      <Filter>src\Batumo\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Batumo\Renderer\Shader.h">
+      <Filter>src\Batumo\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Batumo\Renderer\Texture.h">
+      <Filter>src\Batumo\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Batumo\Renderer\VertexArray.h">
+      <Filter>src\Batumo\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Batumo\Window.h">
-      <Filter>Batumo</Filter>
+      <Filter>src\Batumo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Plataform\OpenGL\OpenGLBuffer.h">
+      <Filter>src\Plataform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Plataform\OpenGL\OpenGLContext.h">
+      <Filter>src\Plataform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Plataform\OpenGL\OpenGLRendererAPI.h">
+      <Filter>src\Plataform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Plataform\OpenGL\OpenGLShader.h">
+      <Filter>src\Plataform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Plataform\OpenGL\OpenGLTexture.h">
+      <Filter>src\Plataform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Plataform\OpenGL\OpenGLVertexArray.h">
+      <Filter>src\Plataform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Plataform\Windows\WindowsInput.h">
-      <Filter>Plataform\Windows</Filter>
+      <Filter>src\Plataform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\Plataform\Windows\WindowsWindow.h">
-      <Filter>Plataform\Windows</Filter>
+      <Filter>src\Plataform\Windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\btpch.h" />
-    <ClInclude Include="src\Batumo\Renderer\GraphicsContext.h" />
-    <ClInclude Include="src\Plataform\OpenGL\OpenGLContext.h" />
-    <ClInclude Include="src\Batumo\Renderer\Shader.h" />
-    <ClInclude Include="src\Batumo\Renderer\Buffer.h" />
-    <ClInclude Include="src\Plataform\OpenGL\OpenGLBuffer.h" />
-    <ClInclude Include="src\Batumo\Renderer\Renderer.h" />
-    <ClInclude Include="src\Batumo\Renderer\VertexArray.h" />
-    <ClInclude Include="src\Plataform\OpenGL\OpenGLVertexArray.h" />
-    <ClInclude Include="src\Batumo\Renderer\RendererAPI.h" />
-    <ClInclude Include="src\Plataform\OpenGL\OpenGLRendererAPI.h" />
-    <ClInclude Include="src\Batumo\Renderer\RendererCommand.h" />
-    <ClInclude Include="src\Batumo\Renderer\Camera.h" />
-    <ClInclude Include="src\Batumo\Core\DeltaTime.h" />
-    <ClInclude Include="src\Plataform\OpenGL\OpenGLShader.h" />
+    <ClInclude Include="src\btpch.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\stb_image\stb_image.h">
+      <Filter>vendor\stb_image</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Batumo\Application.cpp">
-      <Filter>Batumo</Filter>
+      <Filter>src\Batumo</Filter>
     </ClCompile>
     <ClCompile Include="src\Batumo\ImGui\ImGuiBuild.cpp">
-      <Filter>Batumo\ImGui</Filter>
+      <Filter>src\Batumo\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Batumo\ImGui\ImGuiLayer.cpp">
-      <Filter>Batumo\ImGui</Filter>
+      <Filter>src\Batumo\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Batumo\Layer.cpp">
-      <Filter>Batumo</Filter>
+      <Filter>src\Batumo</Filter>
     </ClCompile>
     <ClCompile Include="src\Batumo\LayerStack.cpp">
-      <Filter>Batumo</Filter>
+      <Filter>src\Batumo</Filter>
     </ClCompile>
     <ClCompile Include="src\Batumo\Log.cpp">
-      <Filter>Batumo</Filter>
+      <Filter>src\Batumo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Batumo\Renderer\Buffer.cpp">
+      <Filter>src\Batumo\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Batumo\Renderer\Camera.cpp">
+      <Filter>src\Batumo\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Batumo\Renderer\Renderer.cpp">
+      <Filter>src\Batumo\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Batumo\Renderer\RendererAPI.cpp">
+      <Filter>src\Batumo\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Batumo\Renderer\RendererCommand.cpp">
+      <Filter>src\Batumo\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Batumo\Renderer\Shader.cpp">
+      <Filter>src\Batumo\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Batumo\Renderer\Texture.cpp">
+      <Filter>src\Batumo\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Batumo\Renderer\VertexArray.cpp">
+      <Filter>src\Batumo\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Plataform\OpenGL\OpenGLBuffer.cpp">
+      <Filter>src\Plataform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Plataform\OpenGL\OpenGLContext.cpp">
+      <Filter>src\Plataform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Plataform\OpenGL\OpenGLRendererAPI.cpp">
+      <Filter>src\Plataform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Plataform\OpenGL\OpenGLShader.cpp">
+      <Filter>src\Plataform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Plataform\OpenGL\OpenGLTexture.cpp">
+      <Filter>src\Plataform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Plataform\OpenGL\OpenGLVertexArray.cpp">
+      <Filter>src\Plataform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Plataform\Windows\WindowsInput.cpp">
-      <Filter>Plataform\Windows</Filter>
+      <Filter>src\Plataform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Plataform\Windows\WindowsWindow.cpp">
-      <Filter>Plataform\Windows</Filter>
+      <Filter>src\Plataform\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\btpch.cpp" />
-    <ClCompile Include="src\Plataform\OpenGL\OpenGLContext.cpp" />
-    <ClCompile Include="src\Batumo\Renderer\Shader.cpp" />
-    <ClCompile Include="src\Batumo\Renderer\Buffer.cpp" />
-    <ClCompile Include="src\Plataform\OpenGL\OpenGLBuffer.cpp" />
-    <ClCompile Include="src\Batumo\Renderer\Renderer.cpp" />
-    <ClCompile Include="src\Batumo\Renderer\VertexArray.cpp" />
-    <ClCompile Include="src\Plataform\OpenGL\OpenGLVertexArray.cpp" />
-    <ClCompile Include="src\Batumo\Renderer\RendererAPI.cpp" />
-    <ClCompile Include="src\Plataform\OpenGL\OpenGLRendererAPI.cpp" />
-    <ClCompile Include="src\Batumo\Renderer\RendererCommand.cpp" />
-    <ClCompile Include="src\Batumo\Renderer\Camera.cpp" />
-    <ClCompile Include="src\Plataform\OpenGL\OpenGLShader.cpp" />
+    <ClCompile Include="src\btpch.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\stb_image\stb_image.cpp">
+      <Filter>vendor\stb_image</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

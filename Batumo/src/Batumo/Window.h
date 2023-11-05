@@ -17,7 +17,7 @@ namespace Batumo {
 			: Title(title), Width(width), Height(height){}
 	};
 
-	class BATUMO_API Window {
+	class Window {
 	public:
 		using EventCallbackFn = std::function<void(Event&)>;
 

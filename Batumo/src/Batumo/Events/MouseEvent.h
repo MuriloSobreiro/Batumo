@@ -5,7 +5,7 @@
 
 namespace Batumo {
 
-	class BATUMO_API MouseMovedEvent : public Event
+	class MouseMovedEvent : public Event
 	{
 	public:
 		MouseMovedEvent(float x, float y)
@@ -27,7 +27,7 @@ namespace Batumo {
 		float m_MouseX, m_MouseY;
 	};
 
-	class BATUMO_API MouseScrolledEvent : public Event
+	class MouseScrolledEvent : public Event
 	{
 	public:
 		MouseScrolledEvent(float xOffset, float yOffset)
@@ -49,7 +49,7 @@ namespace Batumo {
 		float m_XOffset, m_YOffset;
 	};
 
-	class BATUMO_API MouseButtonEvent : public Event
+	class MouseButtonEvent : public Event
 	{
 	public:
 		inline int GetMouseButton() const { return m_Button; }
@@ -62,7 +62,7 @@ namespace Batumo {
 		int m_Button;
 	};
 
-	class BATUMO_API MouseButtonPressedEvent : public MouseButtonEvent
+	class MouseButtonPressedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonPressedEvent(int button)
@@ -78,7 +78,7 @@ namespace Batumo {
 		EVENT_CLASS_TYPE(MouseButtonPressed)
 	};
 
-	class BATUMO_API MouseButtonReleasedEvent : public MouseButtonEvent
+	class MouseButtonReleasedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonReleasedEvent(int button)

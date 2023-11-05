@@ -18,6 +18,7 @@
 #include "Batumo/Renderer/Renderer.h"
 #include "Batumo/Renderer/RendererCommand.h"
 
+#include "Batumo/Renderer/Texture.h"
 #include "Batumo/Renderer/Buffer.h"
 #include "Batumo/Renderer/Shader.h"
 #include "Batumo/Renderer/VertexArray.h"

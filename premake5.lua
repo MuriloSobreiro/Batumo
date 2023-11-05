@@ -15,6 +15,7 @@ IncludeDir["GLFW"] = "Batumo/vendor/GLFW/include"
 IncludeDir["Glad"] = "Batumo/vendor/Glad/include"
 IncludeDir["ImGui"] = "Batumo/vendor/ImGui"
 IncludeDir["glm"] = "Batumo/vendor/glm"
+IncludeDir["stb_image"] = "Batumo/vendor/stb_image"
 
 group "Dependencies"
 	include "Batumo/vendor/GLFW"
@@ -37,7 +38,9 @@ project "Batumo"
 
 	files{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp",
 	}
 
 	defines{
@@ -51,7 +54,8 @@ project "Batumo"
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.ImGui}/backends",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}"
 	}
 
 	links{

@@ -2,20 +2,6 @@
 
 #include <memory>
 
-#ifdef BT_PLATAFORM_WINDOWS
-#if BT_DYNAMIC_LINK
-	#ifdef BT_BUILD_DLL
-		#define BATUMO_API __declspec(dllexport)
-	#else
-		#define BATUMO_API __declspec(dllimport)
-	#endif
-#else
-#define BATUMO_API
-#endif
-#else
-#error Batumo only supports Windows!
-#endif
-
 #ifdef BT_DEBUG
 #define BT_ENABLE_ASSERTS
 #endif

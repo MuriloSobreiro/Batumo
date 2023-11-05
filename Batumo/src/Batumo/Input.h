@@ -3,7 +3,7 @@
 #include "Batumo/Core.h"
 
 namespace Batumo {
-	class BATUMO_API Input {
+	class Input {
 	public:
 		static bool IsKeyPressed(int keycode) { return s_instance->IsKeyPressedImpl(keycode); }
 		

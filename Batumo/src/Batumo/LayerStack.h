@@ -6,7 +6,7 @@
 #include <vector>
 
 namespace Batumo {
-	class BATUMO_API LayerStack
+	class LayerStack
 	{
 	public:
 		LayerStack();
