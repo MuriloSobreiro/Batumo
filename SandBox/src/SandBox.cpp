@@ -84,7 +84,7 @@ public:
 			}
 		)";
 
-		m_Shader.reset(Batumo::Shader::Create(vertexSrc, fragmentSrc));
+		m_Shader = Batumo::Shader::Create("VertexPosColor", vertexSrc, fragmentSrc);
 
 		std::string blueShaderVertexSrc = R"(
 			#version 330 core
@@ -113,15 +113,15 @@ public:
 			}
 		)";
 
-		m_BlueShader.reset(Batumo::Shader::Create(blueShaderVertexSrc, blueShaderFragmentSrc));
+		m_BlueShader = Batumo::Shader::Create("blueShader", blueShaderVertexSrc, blueShaderFragmentSrc);
 
-		m_TextureShader.reset(Batumo::Shader::Create("assets/shaders/Texture.glsl"));
+		auto textureShader = m_ShaderLibrary.Load("assets/shaders/Texture.glsl");
 
 		m_Texture = Batumo::Texture2D::Create("assets/textures/Grama.png");
 		m_Shrek = Batumo::Texture2D::Create("assets/textures/Shrek.png");
 
-		std::dynamic_pointer_cast<Batumo::OpenGLShader>(m_TextureShader)->Bind();
-		std::dynamic_pointer_cast<Batumo::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
+		std::dynamic_pointer_cast<Batumo::OpenGLShader>(textureShader)->Bind();
+		std::dynamic_pointer_cast<Batumo::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
 
 		Batumo::Input::DisableMouse();
 	}
@@ -170,11 +170,13 @@ public:
 			}
 		}
 
+		auto textureShader = m_ShaderLibrary.Get("Texture");
+
 		Batumo::Renderer::Submit(m_Shader, m_VertexArray);
 		m_Texture->Bind();
-		Batumo::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		Batumo::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 		m_Shrek->Bind();
-		Batumo::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		Batumo::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		Batumo::Renderer::EndScene();
 	}
@@ -188,10 +190,11 @@ public:
 private:
 	Batumo::PerspectiveCamera m_Camera;
 
+	Batumo::ShaderLibrary m_ShaderLibrary;
 	Batumo::Ref<Batumo::Shader> m_Shader;
 	Batumo::Ref<Batumo::VertexArray> m_VertexArray;
 
-	Batumo::Ref<Batumo::Shader> m_BlueShader, m_TextureShader;
+	Batumo::Ref<Batumo::Shader> m_BlueShader;
 	Batumo::Ref<Batumo::VertexArray> m_SquareVA;
 
 	Batumo::Ref<Batumo::Texture2D> m_Texture, m_Shrek;
