@@ -12,6 +12,8 @@
 
 #include "Batumo/ImGui/ImGuiLayer.h"
 
+#include "Batumo/CameraController.h"
+
 //Renderer----------
 #include "Batumo/Renderer/Camera.h"
 

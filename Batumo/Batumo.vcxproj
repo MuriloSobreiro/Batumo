@@ -140,6 +140,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Batumo\CameraController.h" />
     <ClInclude Include="src\Batumo.h" />
     <ClInclude Include="src\Batumo\Application.h" />
     <ClInclude Include="src\Batumo\Core.h" />
@@ -178,6 +179,7 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Batumo\CameraController.cpp" />
     <ClCompile Include="src\Batumo\Application.cpp" />
     <ClCompile Include="src\Batumo\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Batumo\ImGui\ImGuiLayer.cpp" />

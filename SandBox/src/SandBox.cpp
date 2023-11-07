@@ -7,7 +7,7 @@
 class ExampleLayer : public Batumo::Layer {
 public:
 	ExampleLayer()
-		: Layer("Example"), m_Camera(45.0f, 1280, 720), m_CameraPosition(0,0,-3) {
+		: Layer("Example"), m_CameraController(1280.0f/ 720.0f, 45.0f){
 		
 		m_VertexArray.reset(Batumo::VertexArray::Create());
 
@@ -127,36 +127,12 @@ public:
 	}
 
 	void OnUpdate(Batumo::DeltaTime dt) override {
-		m_CameraPosition = { 0,0,0 };
-		if (Batumo::Input::IsKeyPressed(BT_KEY_A))
-			m_CameraPosition.x += m_CameraMoveSpeed * dt;
-		if (Batumo::Input::IsKeyPressed(BT_KEY_D))
-			m_CameraPosition.x -= m_CameraMoveSpeed * dt;
-		if (Batumo::Input::IsKeyPressed(BT_KEY_W))
-			m_CameraPosition.z += m_CameraMoveSpeed * dt;
-		if (Batumo::Input::IsKeyPressed(BT_KEY_S))
-			m_CameraPosition.z -= m_CameraMoveSpeed * dt;
-
-		m_Camera.Move(m_CameraPosition);
-
-		if (Batumo::Input::IsKeyPressed(BT_KEY_ESCAPE)) {
-			if(m_Mouse)
-				Batumo::Input::DisableMouse();
-			else
-				Batumo::Input::EnableMouse();
-			m_Mouse = !m_Mouse;
-		}
-		if (!m_Mouse) {
-			auto rotation = Batumo::Input::GetMouseDelta();
-			m_Camera.RotateDegrees({ rotation.second * m_CameraRotationSpeed * dt, rotation.first * m_CameraRotationSpeed * dt, 0 });
-		}
-
-		
+		m_CameraController.OnUpdate(dt);
 
 		Batumo::RenderCommand::SetClearColor({ 0.3,0.2,0.5,1.0 });
 		Batumo::RenderCommand::Clear();
 
-		Batumo::Renderer::BeginScene(m_Camera);
+		Batumo::Renderer::BeginScene(m_CameraController.GetCamera());
 
 		glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
@@ -184,11 +160,12 @@ public:
 	virtual void OnImGuiRender() override{
 	}
 
-	void OnEvent(Batumo::Event& event) override {
+	void OnEvent(Batumo::Event& e) override {
+		m_CameraController.OnEvent(e);
 	}
 
 private:
-	Batumo::PerspectiveCamera m_Camera;
+	Batumo::PerspectiveCameraController m_CameraController;
 
 	Batumo::ShaderLibrary m_ShaderLibrary;
 	Batumo::Ref<Batumo::Shader> m_Shader;
@@ -198,11 +175,6 @@ private:
 	Batumo::Ref<Batumo::VertexArray> m_SquareVA;
 
 	Batumo::Ref<Batumo::Texture2D> m_Texture, m_Shrek;
-
-	glm::vec3 m_CameraPosition;
-	float m_CameraMoveSpeed = 10.0f;
-	float m_CameraRotationSpeed = 10.0f;
-	bool m_Mouse = false;
 
 };
 

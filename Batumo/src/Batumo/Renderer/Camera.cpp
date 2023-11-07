@@ -2,15 +2,15 @@
 #include "Camera.h"
 
 namespace Batumo {
-	PerspectiveCamera::PerspectiveCamera(float fov, float width, float height)
+	PerspectiveCamera::PerspectiveCamera(float fov, float aspectRatio)
 	{
-		RecalculateProjectionMatrix(fov, width, height);
+		SetProjection(fov, aspectRatio);
 		m_ViewMatrix = glm::mat4(1.0f);
 		RecalculateViewMatrix();
 	}
-	void PerspectiveCamera::RecalculateProjectionMatrix(float fov, float width, float height)
+	void PerspectiveCamera::SetProjection(float fov, float aspectRatio)
 	{
-		m_ProjectionMatrix = glm::perspective(glm::radians(fov), width / height, 0.1f, 100.0f);
+		m_ProjectionMatrix = glm::perspective(glm::radians(fov), aspectRatio, 0.1f, 100.0f);
 	}
 	void PerspectiveCamera::RecalculateViewMatrix()
 	{
@@ -36,6 +36,12 @@ namespace Batumo {
 	{
 		m_ProjectionMatrix = glm::ortho(left, right, bottom, top, -1.0f, 1.0f);
 		m_ViewMatrix = glm::mat4(1.0f);
+		m_ViewProjectionMatrix = m_ProjectionMatrix * m_ViewMatrix;
+	}
+
+	void OrthographicCamera::SetProjection(float left, float right, float bottom, float top)
+	{
+		m_ProjectionMatrix = glm::ortho(left, right, bottom, top, -1.0f, 1.0f);
 		m_ViewProjectionMatrix = m_ProjectionMatrix * m_ViewMatrix;
 	}
 
