@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Batumo/Core.h"
+#include "Batumo/Core/Core.h"
 
 namespace Batumo {
 	class Input {

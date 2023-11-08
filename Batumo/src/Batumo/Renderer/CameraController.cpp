@@ -1,7 +1,7 @@
 #include "btpch.h"
 #include "CameraController.h"
 
-#include "Batumo/Input.h"
+#include "Batumo/Core/Input.h"
 #include "Batumo/Events/KeyCodes.h"
 
 namespace Batumo {

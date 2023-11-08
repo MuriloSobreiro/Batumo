@@ -1,14 +1,14 @@
 #pragma once
 
 #include "Core.h"
-#include "Events/Event.h"
+#include "Batumo/Events/Event.h"
 #include "Batumo/Events/ApplicationEvent.h"
-#include "ImGui/ImGuiLayer.h"
+#include "Batumo/ImGui/ImGuiLayer.h"
 
 #include "Batumo/Core/DeltaTime.h"
 
 #include "Window.h"
-#include "Batumo/LayerStack.h"
+#include "Batumo/Core/LayerStack.h"
 
 namespace Batumo {
 

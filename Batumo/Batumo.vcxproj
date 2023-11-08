@@ -140,12 +140,12 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Batumo\CameraController.h" />
+    <ClInclude Include="src\Batumo\Renderer\CameraController.h" />
     <ClInclude Include="src\Batumo.h" />
-    <ClInclude Include="src\Batumo\Application.h" />
-    <ClInclude Include="src\Batumo\Core.h" />
+    <ClInclude Include="src\Batumo\Core\Application.h" />
+    <ClInclude Include="src\Batumo\Core\Core.h" />
     <ClInclude Include="src\Batumo\Core\DeltaTime.h" />
-    <ClInclude Include="src\Batumo\EntryPoint.h" />
+    <ClInclude Include="src\Batumo\Core\EntryPoint.h" />
     <ClInclude Include="src\Batumo\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Batumo\Events\Event.h" />
     <ClInclude Include="src\Batumo\Events\KeyCodes.h" />
@@ -153,10 +153,10 @@
     <ClInclude Include="src\Batumo\Events\MouseButtonCodes.h" />
     <ClInclude Include="src\Batumo\Events\MouseEvent.h" />
     <ClInclude Include="src\Batumo\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\Batumo\Input.h" />
-    <ClInclude Include="src\Batumo\Layer.h" />
-    <ClInclude Include="src\Batumo\LayerStack.h" />
-    <ClInclude Include="src\Batumo\Log.h" />
+    <ClInclude Include="src\Batumo\Core\Input.h" />
+    <ClInclude Include="src\Batumo\Core\Layer.h" />
+    <ClInclude Include="src\Batumo\Core\LayerStack.h" />
+    <ClInclude Include="src\Batumo\Core\Log.h" />
     <ClInclude Include="src\Batumo\Renderer\Buffer.h" />
     <ClInclude Include="src\Batumo\Renderer\Camera.h" />
     <ClInclude Include="src\Batumo\Renderer\GraphicsContext.h" />
@@ -166,7 +166,7 @@
     <ClInclude Include="src\Batumo\Renderer\Shader.h" />
     <ClInclude Include="src\Batumo\Renderer\Texture.h" />
     <ClInclude Include="src\Batumo\Renderer\VertexArray.h" />
-    <ClInclude Include="src\Batumo\Window.h" />
+    <ClInclude Include="src\Batumo\Core\Window.h" />
     <ClInclude Include="src\Plataform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Plataform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Plataform\OpenGL\OpenGLRendererAPI.h" />
@@ -179,13 +179,13 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Batumo\CameraController.cpp" />
-    <ClCompile Include="src\Batumo\Application.cpp" />
+    <ClCompile Include="src\Batumo\Renderer\CameraController.cpp" />
+    <ClCompile Include="src\Batumo\Core\Application.cpp" />
     <ClCompile Include="src\Batumo\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Batumo\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="src\Batumo\Layer.cpp" />
-    <ClCompile Include="src\Batumo\LayerStack.cpp" />
-    <ClCompile Include="src\Batumo\Log.cpp" />
+    <ClCompile Include="src\Batumo\Core\Layer.cpp" />
+    <ClCompile Include="src\Batumo\Core\LayerStack.cpp" />
+    <ClCompile Include="src\Batumo\Core\Log.cpp" />
     <ClCompile Include="src\Batumo\Renderer\Buffer.cpp" />
     <ClCompile Include="src\Batumo\Renderer\Camera.cpp" />
     <ClCompile Include="src\Batumo\Renderer\Renderer.cpp" />

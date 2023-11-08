@@ -39,16 +39,16 @@
     <ClInclude Include="src\Batumo.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Batumo\Application.h">
+    <ClInclude Include="src\Batumo\Core\Application.h">
       <Filter>src\Batumo</Filter>
     </ClInclude>
-    <ClInclude Include="src\Batumo\Core.h">
+    <ClInclude Include="src\Batumo\Core\Core.h">
       <Filter>src\Batumo</Filter>
     </ClInclude>
     <ClInclude Include="src\Batumo\Core\DeltaTime.h">
       <Filter>src\Batumo\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Batumo\EntryPoint.h">
+    <ClInclude Include="src\Batumo\Core\EntryPoint.h">
       <Filter>src\Batumo</Filter>
     </ClInclude>
     <ClInclude Include="src\Batumo\Events\ApplicationEvent.h">
@@ -72,16 +72,16 @@
     <ClInclude Include="src\Batumo\ImGui\ImGuiLayer.h">
       <Filter>src\Batumo\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="src\Batumo\Input.h">
+    <ClInclude Include="src\Batumo\Core\Input.h">
       <Filter>src\Batumo</Filter>
     </ClInclude>
-    <ClInclude Include="src\Batumo\Layer.h">
+    <ClInclude Include="src\Batumo\Core\Layer.h">
       <Filter>src\Batumo</Filter>
     </ClInclude>
-    <ClInclude Include="src\Batumo\LayerStack.h">
+    <ClInclude Include="src\Batumo\Core\LayerStack.h">
       <Filter>src\Batumo</Filter>
     </ClInclude>
-    <ClInclude Include="src\Batumo\Log.h">
+    <ClInclude Include="src\Batumo\Core\Log.h">
       <Filter>src\Batumo</Filter>
     </ClInclude>
     <ClInclude Include="src\Batumo\Renderer\Buffer.h">
@@ -111,7 +111,7 @@
     <ClInclude Include="src\Batumo\Renderer\VertexArray.h">
       <Filter>src\Batumo\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\Batumo\Window.h">
+    <ClInclude Include="src\Batumo\Core\Window.h">
       <Filter>src\Batumo</Filter>
     </ClInclude>
     <ClInclude Include="src\Plataform\OpenGL\OpenGLBuffer.h">
@@ -144,10 +144,10 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\Batumo\CameraController.h" />
+    <ClInclude Include="src\Batumo\Renderer\CameraController.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Batumo\Application.cpp">
+    <ClCompile Include="src\Batumo\Core\Application.cpp">
       <Filter>src\Batumo</Filter>
     </ClCompile>
     <ClCompile Include="src\Batumo\ImGui\ImGuiBuild.cpp">
@@ -156,13 +156,13 @@
     <ClCompile Include="src\Batumo\ImGui\ImGuiLayer.cpp">
       <Filter>src\Batumo\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="src\Batumo\Layer.cpp">
+    <ClCompile Include="src\Batumo\Core\Layer.cpp">
       <Filter>src\Batumo</Filter>
     </ClCompile>
-    <ClCompile Include="src\Batumo\LayerStack.cpp">
+    <ClCompile Include="src\Batumo\Core\LayerStack.cpp">
       <Filter>src\Batumo</Filter>
     </ClCompile>
-    <ClCompile Include="src\Batumo\Log.cpp">
+    <ClCompile Include="src\Batumo\Core\Log.cpp">
       <Filter>src\Batumo</Filter>
     </ClCompile>
     <ClCompile Include="src\Batumo\Renderer\Buffer.cpp">
@@ -219,6 +219,6 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\Batumo\CameraController.cpp" />
+    <ClCompile Include="src\Batumo\Renderer\CameraController.cpp" />
   </ItemGroup>
 </Project>

@@ -2,7 +2,7 @@
 #include "WindowsInput.h"
 
 #include <GLFW/glfw3.h>
-#include "Batumo/Application.h"
+#include "Batumo/Core/Application.h"
 
 namespace Batumo {
 

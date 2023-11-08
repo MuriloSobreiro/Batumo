@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Batumo/Window.h"
+#include "Batumo/Core/Window.h"
 #include "Batumo/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>

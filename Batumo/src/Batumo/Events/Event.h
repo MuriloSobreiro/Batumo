@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Batumo/Core.h"
+#include "Batumo/Core/Core.h"
 #include "btpch.h"
 
 namespace Batumo {

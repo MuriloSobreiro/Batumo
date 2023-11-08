@@ -13,7 +13,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "Batumo/Log.h"
+#include "Batumo/Core/Log.h"
 
 #ifdef BT_PLATAFORM_WINDOWS
 	#include <Windows.h>

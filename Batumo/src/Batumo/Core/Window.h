@@ -2,7 +2,7 @@
 
 #include "btpch.h"
 
-#include "Batumo/Core.h"
+#include "Batumo/Core/Core.h"
 #include "Batumo/Events/Event.h"
 
 namespace Batumo {

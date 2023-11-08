@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Batumo/Input.h"
+#include "Batumo/Core/Input.h"
 
 namespace Batumo {
 	class WindowsInput : public Input
